@@ -3,10 +3,11 @@ import { User, MessageCircle } from 'lucide-react';
 import ProfileSelector from './components/ProfileSelector';
 import React, { useState } from 'react';
 import MatchList from './components/MatchList';
+import ChatScreen from './components/ChatScreen';
 
 function App() {
 
-  const [currentScreen, SetCurrentScreen] = useState('profile')
+  const [currentScreen, SetCurrentScreen] = useState('chat')
 
   const renderScreen = () => {
 
@@ -14,7 +15,9 @@ function App() {
       case 'profile':
         return <ProfileSelector />;
       case 'matches':
-        return <MatchList />
+        return <MatchList />;
+      case 'chat':
+        return <ChatScreen />
     }
   }
   return (
