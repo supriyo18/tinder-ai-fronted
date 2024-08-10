@@ -1,5 +1,5 @@
 import './App.css';
-import { User, MessageCircle } from 'lucide-react';
+import { User, MessageCircle, X, Heart } from 'lucide-react';
 
 const ProfileSelector = () => {
   return (
@@ -14,6 +14,23 @@ const ProfileSelector = () => {
           <h2 className='text-3xl font-semibold'>Shreyaa , 29</h2>
         </div>
       </div>
+      <div className='p-4'>
+        <p className='text-gray-700 mb-4'>I am a software Engineer at Amazon</p>
+      </div>
+
+      <div className='p-4 flex justify-center space-x-4'>
+        <button className='bg-red-500 rounded-full p-4 text-white hover:bg-red-700'
+          onClick={() => console.log('swipe left')}
+        >
+          <X size={24} />
+        </button>
+        <button className='bg-green-500 rounded-full  p-4 text-white hover:bg-green-700'
+          onClick={() => console.log('swipe right')}
+        >
+          <Heart size={24} />
+        </button>
+      </div>
+
     </div>
   );
 };
