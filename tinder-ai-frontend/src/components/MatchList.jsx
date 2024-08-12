@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MatchList = () => {
+const MatchList = ({ onSelectMatch }) => {
     return (
         <div className='rounded-lg shadow-lg p-4'>
             <h2 className='text-2xl font-bold mb-4'>Matches</h2>
@@ -12,7 +12,9 @@ const MatchList = () => {
                 ].map(key => {
                     return (
                         <li key={key.id} className="flex items-center space-x-4">
-                            <button className='w-full hover:bg-green-50 flex items-center'>
+                            <button className='w-full hover:bg-green-50 flex items-center'
+                                onClick={onSelectMatch}
+                            >
                                 <img src={key.photo} alt={`${key.firstname} ${key.lastName}`} className='w-16 h-16 rounded-full mr-3' />
                                 <span>
                                     <h3 className="font-bold">{key.firstname} {key.lastName}</h3>

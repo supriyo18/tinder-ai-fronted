@@ -6,8 +6,7 @@ import MatchList from './components/MatchList';
 import ChatScreen from './components/ChatScreen';
 
 function App() {
-
-  const [currentScreen, SetCurrentScreen] = useState('chat')
+  const [currentScreen, SetCurrentScreen] = useState('profile')
 
   const renderScreen = () => {
 
@@ -15,7 +14,7 @@ function App() {
       case 'profile':
         return <ProfileSelector />;
       case 'matches':
-        return <MatchList />;
+        return <MatchList onSelectMatch={() => SetCurrentScreen('chat')} />;
       case 'chat':
         return <ChatScreen />
     }
